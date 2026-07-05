@@ -1,5 +1,8 @@
 pipeline {
     agent { label 'Jenkins-Agent' }
+    parameters {
+        string(name: 'IMAGE_TAG', defaultValue: '', description: 'The image tag to deploy')
+    }
     environment {
         APP_NAME = 'register-app-pipeline'
     }
